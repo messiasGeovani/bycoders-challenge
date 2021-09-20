@@ -5,14 +5,13 @@
   "username": "postgres",
   "password": "postgres",
   "database": "bycoders",
-  "synchronize": true,
-  "logging": false,
-  "entities": ["src/app/database/models/**/*.ts"],
-  "migrations": ["src/app/database/migrations/**/*.ts"],
-  "subscribers": ["src/app/database/subscriber/**/*.ts"],
+  "entities": [
+    "./src/modules/**/infra/typeorm/entities/*.ts"
+  ],
+  "migrations": [
+    "./src/shared/infra/typeorm/migrations/*.ts"
+  ],
   "cli": {
-    "entitiesDir": "src/app/database/models",
-    "migrationsDir": "src/app/database/migrations",
-    "subscribersDir": "src/app/database/subscriber"
+    "migrationsDir": "./src/shared/infra/typeorm/migrations"
   }
 }

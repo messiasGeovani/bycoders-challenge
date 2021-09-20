@@ -1,13 +1,27 @@
 {
   "compilerOptions": {
-    "lib": ["es5", "es6", "es2018"],
-    "target": "es5",
+    "allowJs": true,
+    "target": "es2018",
     "module": "commonjs",
     "moduleResolution": "node",
+    "rootDir": "./src",
     "outDir": "./build",
+    "esModuleInterop": true,
+    "strict": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "sourceMap": true,
-    "typeRoots": ["./src/@types", "./node_modules/@types"]
-  }
+    "typeRoots": ["./src/@types", "./node_modules/@types"],
+    "baseUrl": "./src",
+    "paths": {
+      "@modules/*": ["modules/*"] ,
+      "@config/*": ["config/*"],
+      "@shared/*": ["shared/*"]
+    },
+    "strictPropertyInitialization": true,
+    "resolveJsonModule": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", ".vscode"]
 }

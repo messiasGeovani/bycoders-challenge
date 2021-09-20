@@ -1,38 +1,39 @@
 {
   "name": "backend",
-  "version": "0.0.1",
-  "description": "Awesome project developed with TypeORM.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "engines": {
+    "node": "14.17",
+    "yarn": "1.22"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dayjs": "^1.10.7",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "express-fileupload": "^1.2.1",
+    "jsonwebtoken": "^8.5.1",
+    "reflect-metadata": "^0.1.13",
+    "rimraf": "^3.0.2",
+    "tsconfig-paths": "^3.11.0",
+    "typeorm": "^0.2.37",
+    "uuidv4": "^6.2.12"
+  },
+  "scripts": {
+    "build": "rimraf ./build && tsc --build",
+    "start": "node -r ./tsconfig-paths-bootstrap.js ./build/shared/infra/http/server.js",
+    "dev": "ts-node-dev -r tsconfig-paths/register --files --transpile-only --ignore-watch node_modules src/shared/infra/http/server.ts"
+  },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
     "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
-    "@types/express-fileupload": "^1.1.7",
-    "@types/node": "^8.0.29",
-    "nodemon": "^2.0.12",
-    "ts-node": "3.3.0",
-    "typescript": "^4.3.5"
-  },
-  "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "body-parser": "^1.18.1",
-    "concurrently": "^6.2.1",
-    "cors": "^2.8.5",
-    "dayjs": "^1.10.6",
-    "express": "^4.15.4",
-    "express-fileupload": "^1.2.1",
-    "jsonwebtoken": "^8.5.1",
-    "pg": "^8.4.0",
-    "reflect-metadata": "^0.1.10",
-    "rimraf": "^3.0.2",
-    "typeorm": "0.2.36"
-  },
-  "scripts": {
-    "start:local": "ts-node --files src/index.ts",
-    "dev:local": "nodemon --exec ts-node src/index.ts",
-    "dev": "concurrently -k \"npm run build:watch\" \"npm run start:dev\"",
-    "start": "node build/index.js",
-    "start:dev": "nodemon --inspect=0.0.0.0:9229 src/index.ts",
-    "build": "rimraf ./build && tsc",
-    "build:watch": "tsc -w"
+    "@types/jsonwebtoken": "^8.5.5",
+    "@types/uuidv4": "^5.0.0",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.4.3"
   }
 }
